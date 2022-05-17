@@ -66,7 +66,7 @@ while True:
     print(f"Sıradaki komut {next_waypoint}")
     time.sleep(1)
 
-    if next_waypoint is 4:
+    if next_waypoint == 4:
         print("Görev bitti.")
         break
 
