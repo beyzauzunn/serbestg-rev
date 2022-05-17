@@ -2,7 +2,7 @@ from dronekit import Command, connect, VehicleMode, LocationGlobalRelative
 import time
 from pymavlink import mavutil
 
-iha = connect("127.0.0.1:14550", wait_ready=True)
+iha = connect("/dev/serial0", baud=57600, wait_ready=True)
 
 def takeoff(irtifa):
     while iha.is_armable is not True:
