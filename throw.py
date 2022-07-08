@@ -10,10 +10,9 @@ iha.mode = VehicleMode("THROW")
 while iha.is_armable is not True:
     print("IHA arm edilebilir durumda degil.")
     time.sleep(1)
+print("IHA arm edilebilir.")
 
-    print("IHA arm edilebilir.")
-
-    iha.armed = True
+iha.armed = True
 
 while iha.armed is not True:
     print("IHA arm ediliyor...")
