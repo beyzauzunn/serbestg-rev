@@ -1,7 +1,7 @@
 from dronekit import connect, VehicleMode,LocationGlobalRelative
 import time
 from pymavlink import mavutil
-iha = connect("/dev/serial0", baud=57600, wait_ready=True)
+iha = connect("/dev/serial0", baud=57600, wait_ready=False)
 
 while iha.is_armable is not True:
     print("IHA arm edilebilir durumda degil.")
