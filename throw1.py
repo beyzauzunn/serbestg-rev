@@ -26,34 +26,16 @@ while iha.armed is False:
 if iha.armed is True:
     print("IHA arm edildi.")
 
-
-
-def goto_position_target_relative_ned(x, y, down):
-
-    msg = iha.message_factory.set_position_target_local_ned_encode(
-        0,       # time_boot_ms (not used)
-        0, 0,    # target system, target component
-        mavutil.mavlink.MAV_FRAME_BODY_OFFSET_NED, # frame
-        0b0000111111111000, # type_mask (only positions enabled)
-        x, y, down,
-        0, 0, 0, # x, y, z velocity in m/s  (not used)
-        0, 0, 0, # x, y, z acceleration (not supported yet, ignored in GCS_Mavlink)
-        0, 0)    # yaw, yaw_rate (not supported yet, ignored in GCS_Mavlink)
-    # send command to iha
-    iha.send_mavlink(msg)
-
 while iha.mode.name is not "GUIDED":
     time.sleep(1)
     
 if iha.mode.name is "GUIDED":
-    
-    goto_position_target_relative_ned(5,5,-5)
-    
-    konum1=LocationGlobalRelative(-35.36295893,149.16581571,2)
    
-    konum2=LocationGlobalRelative(-35.36234136,149.16467289,2)
+    konum1=LocationGlobalRelative(41.1013957,29.0258011,3)
    
-    konum3=LocationGlobalRelative(-35.36200450,149.16592586,2)
+    konum2=LocationGlobalRelative(41.1016221,29.0262571,3)
+   
+    konum3=LocationGlobalRelative(41.1018626,29.0255812,3)
     
     iha.simple_goto(konum1)
     time.sleep(10)
