@@ -18,8 +18,6 @@ while iha.armed!=True
  
 iha.simple_takeoff(5)
 time.sleep(15)
-iha.simple_goto(,,)
-iha.parameters
 
 iha.parameters['LAND_SPEED']=20  
 iha.mode=VehicleMode("RTL")
